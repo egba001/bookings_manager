@@ -1,8 +1,9 @@
 import React from "react";
+import '../../index.css';
 
 function UserPicker () {
     return (
-        <select>
+        <select className='h-fit self-center rounded-md mr-1'>
             <option>Users</option>
         </select>
     )

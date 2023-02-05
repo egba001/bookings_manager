@@ -9,26 +9,25 @@ import UserPicker from "./components/Users/UserPicker.js";
 function App() {
   return (
     <Router>
-      <div className='bg-red'>
-        <header>
-          <nav>
-            <ul>
-              <li>
-                <NavLink to="/bookings" className="btn">
+        <header className='flex bg-blue-500 w-screen justify'>
+          <nav className='w-3/4 px-4'>
+            <ul className='py-3 flex w-full'>
+              <li className='w-2/4  text-green-800 bg-blue-100  p-2 rounded-lg mr-2 hover:bg-blue-300'>
+                <NavLink to="/bookings" className="flex text-center items-center  justify-center">
                   <FaCalendarAlt />
-                  <span>Bookings</span>
+                  <span className='pl-2 text-sm'>Bookings</span>
                 </NavLink>
               </li>
-              <li>
-                <NavLink to="/bookables" className="btn">
+              <li className=' group w-2/4 text-green-800 bg-blue-100  p-2 rounded-lg mr-2 hover:bg-blue-300'>
+                <NavLink to="/bookables" className="flex text-center items-center  justify-center">
                   <FaDoorOpen />
-                  <span>Bookables</span>
+                  <span className='pl-2 text-sm'>Bookables</span>
                 </NavLink>
               </li>
-              <li>
-                <NavLink to="/users" className="btn">
+              <li className='w-2/4  text-green-800 bg-blue-100  p-2 rounded-lg mr-2 hover:bg-blue-300'>
+                <NavLink to="/users" className="flex text-center items-center  justify-center">
                   <FaUsers />
-                  <span>Users</span>
+                  <span className='pl-2 text-sm'>Users</span>
                 </NavLink>
               </li>
             </ul>
@@ -42,7 +41,6 @@ function App() {
           <Route path="/bookables" element={<BookablesPage />}/>
           <Route path="/users" element={<UsersPage />}/>
         </Routes>
-      </div>
     </Router>
   )
 }
