@@ -3,7 +3,7 @@ import BookablesList from "./BookablesList";
 
 function BookablesPage() {
     return (
-       <main className="bookables-page">
+       <main className="page-content">
             <BookablesList /> 
        </main>
     )

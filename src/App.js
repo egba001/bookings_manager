@@ -9,25 +9,25 @@ import UserPicker from "./components/Users/UserPicker.js";
 function App() {
   return (
     <Router>
-        <header className='flex bg-blue-500 w-screen justify'>
-          <nav className='w-3/4 px-4'>
-            <ul className='py-3 flex w-full'>
-              <li className='w-2/4  text-green-800 bg-blue-100  p-2 rounded-lg mr-2 hover:bg-blue-300'>
-                <NavLink to="/bookings" className="flex text-center items-center  justify-center">
+        <header className='flex flex-col md:flex-row bg-blue-500 w-screen'>
+          <nav className='w-full px-4 md:w-1/2 lg:w-1/3'>
+            <ul className='py-3 flex w-full px-0'>
+              <li className='btn mr-2 hover:bg-blue-100 hover:shadow-lg'>
+                <NavLink to="/bookings" className="flex items-center justify-center">
                   <FaCalendarAlt />
-                  <span className='pl-2 text-sm'>Bookings</span>
+                  <span className='icon-space'>Bookings</span>
                 </NavLink>
               </li>
-              <li className=' group w-2/4 text-green-800 bg-blue-100  p-2 rounded-lg mr-2 hover:bg-blue-300'>
+              <li className='btn mr-2 hover:bg-blue-100 hover:shadow-lg'>
                 <NavLink to="/bookables" className="flex text-center items-center  justify-center">
                   <FaDoorOpen />
-                  <span className='pl-2 text-sm'>Bookables</span>
+                  <span className='icon-space'>Bookables</span>
                 </NavLink>
               </li>
-              <li className='w-2/4  text-green-800 bg-blue-100  p-2 rounded-lg mr-2 hover:bg-blue-300'>
+              <li className='btn mr-2 hover:bg-blue-100 hover:shadow-lg'>
                 <NavLink to="/users" className="flex text-center items-center  justify-center">
                   <FaUsers />
-                  <span className='pl-2 text-sm'>Users</span>
+                  <span className='icon-space'>Users</span>
                 </NavLink>
               </li>
             </ul>

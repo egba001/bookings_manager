@@ -3,7 +3,7 @@ import '../../index.css';
 
 function UserPicker () {
     return (
-        <select className='h-fit self-center rounded-md mr-1'>
+        <select className='p-2 h-fit self-center rounded-md md:self-end md:mr-3'>
             <option>Users</option>
         </select>
     )

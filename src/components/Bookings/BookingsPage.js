@@ -2,7 +2,7 @@ import React from "react";
 
 function BookingsPage () {
     return (
-        <p>bookings</p>
+        <main className="page-content">Bookings</main>
     )
 }
 export default BookingsPage;
