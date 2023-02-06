@@ -6,8 +6,12 @@
     @apply p-1 rounded-md border-2 bg-blue-300 text-white w-fit
 }
 
+.page-btn {
+    @apply p-1 rounded-md border-2 bg-blue-300 text-white w-40
+}
+
 .selected-btn {
-    @apply p-1 rounded-md border-2 bg-blue-900 w-fit text-white
+    @apply p-1 rounded-md border-2 bg-blue-900 w-fit text-white w-40
 }
 
 .page-content {

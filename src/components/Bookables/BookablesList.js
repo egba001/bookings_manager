@@ -16,8 +16,8 @@ function BookablesList() {
     return (
         <ul className="bookables">
             {bookablesInGroup.map((b, i) => (
-                <li key={b.title} className={i === BookableIndex ? "selected-btn" : null}>
-                    <button className="btn" onClick={() => setBookableIndex(i)}>{b.title}</button>
+                <li key={b.title} className={i === BookableIndex ? "selected-btn" : "page-btn"}>
+                    <button onClick={() => setBookableIndex(i)}>{b.title}</button>
                 </li>
             ))}
         </ul>
