@@ -9,22 +9,22 @@ import UserPicker from "./components/Users/UserPicker.js";
 function App() {
   return (
     <Router>
-        <header className='flex flex-col md:flex-row bg-blue-500 w-screen'>
+        <header className='flex bg-blue-500 w-full justify-between'>
           <nav className='w-full px-4 md:w-1/2 lg:w-1/3'>
             <ul className='py-3 flex w-full px-0'>
-              <li className='btn mr-2 hover:bg-blue-100 hover:shadow-lg'>
-                <NavLink to="/bookings" className="flex items-center justify-center">
+              <li className='btn mr-2 hover:bg-blue-500'>
+                <NavLink to="/bookings" className="flex text-center items-center justify-center">
                   <FaCalendarAlt />
                   <span className='icon-space'>Bookings</span>
                 </NavLink>
               </li>
-              <li className='btn mr-2 hover:bg-blue-100 hover:shadow-lg'>
+              <li className='btn mr-2 hover:bg-blue-500'>
                 <NavLink to="/bookables" className="flex text-center items-center  justify-center">
                   <FaDoorOpen />
                   <span className='icon-space'>Bookables</span>
                 </NavLink>
               </li>
-              <li className='btn mr-2 hover:bg-blue-100 hover:shadow-lg'>
+              <li className='btn hover:bg-blue-500'>
                 <NavLink to="/users" className="flex text-center items-center  justify-center">
                   <FaUsers />
                   <span className='icon-space'>Users</span>
