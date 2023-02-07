@@ -2,22 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn {
+.nav-btn {
     @apply p-1 rounded-md border-2 bg-blue-300 text-white w-fit
 }
 
 .page-btn {
-    @apply p-1 rounded-md border-2 bg-blue-300 text-white w-40
+    @apply p-1 rounded-md bg-blue-300 text-white w-40 mb-2
 }
 
 .selected-btn {
-    @apply p-1 rounded-md border-2 bg-blue-900 w-fit text-white w-40
+    @apply p-1 rounded-md bg-blue-900 text-white w-40 mb-2
 }
 
 .page-content {
-    @apply p-6 bg-sky-100
+    @apply p-9 bg-sky-100
 }
 
 .icon-space {
-    @apply pl-2 text-sm md:text-base
+    @apply pl-1 text-sm md:text-base
 }

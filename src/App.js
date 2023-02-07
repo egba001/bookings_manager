@@ -9,23 +9,23 @@ import UserPicker from "./components/Users/UserPicker.js";
 function App() {
   return (
     <Router>
-        <header className='flex bg-blue-500 w-full justify-between'>
-          <nav className='w-full px-4 md:w-1/2 lg:w-1/3'>
+        <header className='text-xs flex bg-blue-500 w-full justify-center md:justify-between'>
+          <nav className='w-full mx-9 md:w-1/2 lg:w-1/3'>
             <ul className='py-3 flex w-full px-0'>
-              <li className='btn mr-2 hover:bg-blue-500'>
-                <NavLink to="/bookings" className="flex text-center items-center justify-center">
+              <li>
+                <NavLink to="/bookings" className="flex text-center items-center justify-center nav-btn mr-1 hover:bg-blue-500">
                   <FaCalendarAlt />
                   <span className='icon-space'>Bookings</span>
                 </NavLink>
               </li>
-              <li className='btn mr-2 hover:bg-blue-500'>
-                <NavLink to="/bookables" className="flex text-center items-center  justify-center">
+              <li>
+                <NavLink to="/bookables" className="flex text-center items-center nav-btn mr-1 hover:bg-blue-500 justify-center">
                   <FaDoorOpen />
                   <span className='icon-space'>Bookables</span>
                 </NavLink>
               </li>
-              <li className='btn hover:bg-blue-500'>
-                <NavLink to="/users" className="flex text-center items-center  justify-center">
+              <li>
+                <NavLink to="/users" className="flex text-center items-center  justify-center nav-btn hover:bg-blue-500">
                   <FaUsers />
                   <span className='icon-space'>Users</span>
                 </NavLink>
