@@ -15,7 +15,7 @@
 }
 
 .page-content {
-    @apply p-9 bg-sky-100
+    @apply pl-9 pt-9 bg-sky-100
 }
 
 .icon-space {
