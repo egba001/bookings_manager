@@ -9,7 +9,7 @@ import UserPicker from "./components/Users/UserPicker.js";
 function App() {
   return (
     <Router>
-        <header className='text-xs flex bg-blue-500 w-full justify-center md:justify-between'>
+        <header className='text-xs flex bg-blue-500 w-full justify-center md:justify-between h-[10vh]'>
           <nav className='w-full mx-9 md:w-1/2 lg:w-1/3'>
             <ul className='py-3 flex w-full px-0'>
               <li>

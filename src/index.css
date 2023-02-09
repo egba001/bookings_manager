@@ -15,9 +15,13 @@
 }
 
 .page-content {
-    @apply pl-9 pt-9 bg-sky-100
+    @apply relative md:pl-9 md:pt-9 bg-sky-100 h-[90vh]
 }
 
 .icon-space {
     @apply pl-1 text-sm md:text-base
+}
+
+.details {
+    @apply bg-blue-800 rounded-md ml-7 w-[70vw]
 }

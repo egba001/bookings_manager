@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from "react";
+import React, { useState } from "react";
 import data from "../../static.json";
 import "../../index.css";
 import {FaArrowRight} from "react-icons/fa";
@@ -21,7 +21,7 @@ function BookablesList() {
     }
 
     return (
-        <Fragment>
+        <div className="flex justify-start">
                 <div className="flex flex-col w-fit">
                     <div className="flex justify-between mb-3">
                         <select value={group} className="mb-2 w-fit m-auto rounded-lg" onChange={(e) => setGroup(e.target.value)}>
@@ -44,22 +44,22 @@ function BookablesList() {
                 </div>
             
                 {bookable && (
-                <div className="">
-                    <div className="">
-                        <div className="">
-                            <h2>{bookable.title}</h2>
-                            <span>
+                <div className="details">
+                    <div className="min-w-[80%] h-2/5">
+                        <div className="bg-blue-400 flex justify-between rounded-t-md p-3 w-full">
+                            <h2 className="text-lg font-bold text-white self-center">{bookable.title}</h2>
+                            <span className="bg-blue-600 p-2 rounded-md">
                                 <label>
-                                    <input type="checkbox" checked={hasDetails} onChange={() => setHasDetails(hasDetails => !hasDetails)} />
+                                    <input type="checkbox" className="mr-2" checked={hasDetails} onClick={() => setHasDetails(hasDetails => !hasDetails)} />
                                     Show Details
                                 </label>
                             </span>
                         </div>
 
-                        <p>{bookable.notes}</p>
+                        <p className="p-3 text-white">{bookable.notes}</p>
 
                         {hasDetails && (
-                            <div className="items-details">
+                            <div className="">
                                 <h3>Availability</h3>
                                 <div    className="bookable-availability">
                                     <ul>
@@ -74,7 +74,7 @@ function BookablesList() {
                     </div>
                 </div>
             )}
-        </Fragment>
+        </div>
         
     )
 };
