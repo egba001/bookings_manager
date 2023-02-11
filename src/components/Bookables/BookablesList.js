@@ -1,20 +1,28 @@
 import React, { useState } from "react";
-import data from "../../static.json";
+import {bookables, sessions, days} from "../../static.json";
 import "../../index.css";
 import {FaArrowRight} from "react-icons/fa";
+import reducer from './reducer';
+
+const initialState = {
+    group: "Room",
+    BookableIndex: 0,
+    hasDetails: true,
+    bookables
+}
+
+
 
 function BookablesList() {
-    // Destructure the data from the static.json file into an object
-    const {bookables, sessions, days} = data;
-    const [group, setGroup] = useState("Kit");
+   
+    const [state, action ] = useReducer(reducer, initialState);
+
+    const {group, BookableIndex, bookables,  hasDetails} = state;
+
     const bookablesInGroup = bookables.filter(b => b.group === group);
-    // useState hook to update state
-    const [ BookableIndex, setBookableIndex ] = useState(0);
     const groups = [...new Set(bookables.map(b => b.group))];
 
     const bookable = bookablesInGroup[BookableIndex];
-
-    const [hasDetails, setHasDetails] = useState(false);
 
     function changeGroup(event) {
         setGroup(event.target.value);
