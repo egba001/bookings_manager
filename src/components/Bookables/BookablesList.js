@@ -16,6 +16,11 @@ function BookablesList() {
 
     const [hasDetails, setHasDetails] = useState(false);
 
+    function changeGroup(event) {
+        setGroup(event.target.value);
+        setBookableIndex(0);
+    }
+
     function nextBookable () {
         setBookableIndex(i => (i + 1) % bookablesInGroup.length);
     }
@@ -24,7 +29,7 @@ function BookablesList() {
         <div className="flex justify-start">
                 <div className="flex flex-col w-fit">
                     <div className="flex justify-between mb-3">
-                        <select value={group} className="mb-2 w-fit m-auto rounded-lg" onChange={(e) => setGroup(e.target.value)}>
+                        <select value={group} className="mb-2 w-fit m-auto rounded-lg" onChange={changeGroup}>
                         {groups.map(g => <option value={g} key={g}>{g}</option>)}
                         </select>
 
