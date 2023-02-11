@@ -1,0 +1,1 @@
+export function addDays (date, daysToAdd)

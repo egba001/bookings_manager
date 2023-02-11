@@ -1,8 +1,10 @@
-import React, { useState } from "react";
-import {bookables, sessions, days} from "../../static.json";
+import React, { useReducer } from "react";
+import data from "../../static.json";
 import "../../index.css";
 import {FaArrowRight} from "react-icons/fa";
 import reducer from './reducer';
+
+const {bookables, sessions, days} = data;
 
 const initialState = {
     group: "Room",
@@ -15,22 +17,37 @@ const initialState = {
 
 function BookablesList() {
    
-    const [state, action ] = useReducer(reducer, initialState);
-
-    const {group, BookableIndex, bookables,  hasDetails} = state;
+    const [{group, bookables, BookableIndex, hasDetails}, dispatch ] = useReducer(reducer, initialState);
 
     const bookablesInGroup = bookables.filter(b => b.group === group);
     const groups = [...new Set(bookables.map(b => b.group))];
 
     const bookable = bookablesInGroup[BookableIndex];
 
-    function changeGroup(event) {
-        setGroup(event.target.value);
-        setBookableIndex(0);
+    function changeGroup(e) {
+        dispatchEvent({
+            type: "SET_GROUP",
+            payload: e.target.value
+        });
+    }
+
+    function changeBookable(selectedIndex) {
+        dispatchEvent({
+            type: "SET_BOOKABLE",
+            payload: selectedIndex
+        });
+
+
     }
 
     function nextBookable () {
-        setBookableIndex(i => (i + 1) % bookablesInGroup.length);
+        dispatchEvent({
+            type: "NEXT_BOOKABLE"
+        })
+    }
+
+    function toggleDetails() {
+        dispatchEvent({ type: "TOGGLE_HAS_DETAILS"});
     }
 
     return (
@@ -38,7 +55,7 @@ function BookablesList() {
                 <div className="flex flex-col w-fit">
                     <div className="flex justify-between mb-3">
                         <select value={group} className="mb-2 w-fit m-auto rounded-lg" onChange={changeGroup}>
-                        {groups.map(g => <option value={g} key={g}>{g}</option>)}
+                        {groups.map(group => <option value={group} key={group}>{group}</option>)}
                         </select>
 
                         <button className="bg-blue-900 text-white border-2 rounded-lg h-fit p-1 flex justify-center items-center justify-self-center w-fit m-auto" onClick={nextBookable} autoFocus>
@@ -50,7 +67,7 @@ function BookablesList() {
                     <ul>
                         {bookablesInGroup.map((b, i) => (
                         <li key={b.title} >
-                        <button className={i === BookableIndex ? "selected-btn" : "page-btn"} onClick={() => setBookableIndex(i)}>{b.title}</button>
+                        <button className={i === BookableIndex ? "selected-btn" : "page-btn"} onClick={() => changeBookable(i)}>{b.title}</button>
                         </li>
                         ))}
                     </ul>
@@ -63,7 +80,7 @@ function BookablesList() {
                             <h2 className="text-lg font-bold text-white self-center">{bookable.title}</h2>
                             <span className="bg-blue-600 p-2 rounded-md">
                                 <label>
-                                    <input type="checkbox" className="mr-2" checked={hasDetails} onClick={() => setHasDetails(hasDetails => !hasDetails)} />
+                                    <input type="checkbox" className="mr-2" checked={hasDetails} onChange={toggleDetails} />
                                     Show Details
                                 </label>
                             </span>
