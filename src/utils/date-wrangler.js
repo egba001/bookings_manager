@@ -10,7 +10,7 @@ export function getWeek(forDate, daysOffset = 0) {
 
     return {
         date,
-        start: addDays(date. -day),
+        start: addDays(date. day),
         end: addDays(date, 6 - day)
     };
 }
